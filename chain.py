@@ -4,7 +4,7 @@ import json
 import time
 import socket
 
-class chain:
+class Chain:
     def __init__(self):
         self.chain = [self.create_genesis_block()]
         self.difficulty = 4

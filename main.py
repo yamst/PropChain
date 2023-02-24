@@ -1,6 +1,7 @@
 import socket
 import threading
 import json
+import time
 from chain import Chain
 from block import Block
 
@@ -9,7 +10,7 @@ HOST = '127.0.0.1'
 PORT = 5000
 
 # Create a blockchain instance
-blockchain = Blockchain()
+blockchain = Chain()
 
 # Define the thread function to handle incoming client connections
 def handle_client(conn, addr):
