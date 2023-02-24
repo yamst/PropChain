@@ -1,5 +1,7 @@
 import socket
 import threading
+from block import Block
+
 
 class Node:
     def __init__(self, host, port, blockchain):

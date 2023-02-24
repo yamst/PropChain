@@ -1,5 +1,8 @@
 import hashlib
 from block import Block
+import json
+import time
+import socket
 
 class chain:
     def __init__(self):

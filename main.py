@@ -1,7 +1,8 @@
 import socket
 import threading
 import json
-from blockchain import Blockchain, Block
+from chain import Chain
+from block import Block
 
 # Define the host and port for the node
 HOST = '127.0.0.1'
