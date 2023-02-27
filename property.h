@@ -1,3 +1,6 @@
+#ifndef PROPERTY_H_
+#define PROPERTY_H_
+
 #include <string>
 
 //special owners:
@@ -5,7 +8,7 @@
 #define FIRM_1 -2
 #define FIRM_2 -3
 
-
+#define INVALID_PROPERTY
 
 class property{
 
@@ -32,3 +35,4 @@ class property{
     Metadata m_info;
 
 };
+#endif /* PROPERTY_H_ */

@@ -1,13 +1,17 @@
+#ifndef TRANSACTION_H_
+#define TRANSACTION_H_
 #define FAILED_EXECUTION -1
 
 
 class transaction{
 
     public: 
-    
-    transaction(int buyer, int seller, int shares);
+
+    transaction(int prop_id, int buyer, int seller, int shares);
 
     transaction(const transaction&);
+
+    transaction(); // invalid spotholder
 
     ~transaction() = default;
 
@@ -22,3 +26,5 @@ class transaction{
     int m_shares;
 
 };
+
+#endif /* TRANSACTION_H_ */
