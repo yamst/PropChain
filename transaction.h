@@ -21,9 +21,13 @@ class transaction{
     private:
 
     int m_property_id;
+
     int m_buyer;
+
     int m_seller;
+
     int m_shares;
+    
 
 };
 

@@ -21,6 +21,26 @@ class property{
 
     void splitshares(int splitting_constant);
 
+    double getCost(int number_of_shares);//imp
+
+    bool transferShares(int buyer, int seller, int num_of_shares);//imp
+
+    void addtenant(int tenant_id);
+
+    void removetenant(int tenant_id);
+
+
+
+
+
+
+
+
+
+    
+
+    
+
     private:
 
     int m_property_id; //we will assume properties have identifiers
@@ -34,6 +54,8 @@ class property{
     int m_shares; // number of shares. must be positive
 
     double m_total_value; // total value of property. needs to be updated monthly
+
+    double m_total_rent_fee;
 
     int* m_owners; // an array of size @field shares of the ids of all owners
 
