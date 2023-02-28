@@ -26,3 +26,15 @@ block::~block(){
 
 block::header::header(long long nonce, std::string prev_hash, std::string root_hash):
 m_nonce(nonce), m_previous_hash(prev_hash), m_timestamp(time(NULL)), m_root_hash(root_hash){}
+
+
+
+std::string block::computeHeaderHash(){
+    SHA256 calculated;
+
+    calculated.add(&(m_head.m_nonce), sizeof(long long));
+    calculated.add((const void*)(m_head.m_previous_hash.c_str()), m_head.m_previous_hash.length());
+    calculated.add(&(m_head.m_timestamp), sizeof(size_t));
+    //add rrot
+
+}

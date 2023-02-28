@@ -17,7 +17,10 @@ class block{
 
         public:
 
-        header(long long nonce, std::string prev_hash, std::string root_hash;
+        header(long long nonce, std::string prev_hash, std::string root_hash);
+
+        friend block;
+
 
         private:
 
