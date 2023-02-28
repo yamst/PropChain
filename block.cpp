@@ -4,7 +4,7 @@
 
 
 block::block(long long nonce, std::string prev_hash, transaction* transactions, int n, bool prealloc):
-m_num_transactions(n), m_transactions(transactions), m_accumulative_hash((void*)m_transactions, (size_t)n*sizeof(transaction)),
+m_num_transactions(n), m_transactions(transactions), m_accumulative_hash((void*)m_transactions, n*sizeof(transaction)),
 m_head(nonce, prev_hash, m_accumulative_hash.getHash()){
     if (n > TX_PER_BLOCK){
         throw too_many_TX();
@@ -15,27 +15,14 @@ m_head(nonce, prev_hash, m_accumulative_hash.getHash()){
             m_transactions[i] = transactions[i];
         }
     }
-    unsigned char* root_hash = new char[HASH_BYTES];
-    m_accumulative_hash.getHash(root_hash);
+ 
 
 }
-
 
 block::~block(){
-
-
-
-
+    delete[] m_transactions;
 }
 
 
-block::header::header(long long nonce, char* prev_hash, char* root_hash, bool prealloc):
-m_nonce(nonce), m_previous_hash(NULL), m_timestamp(time(NULL)), m_root_hash(NULL){
-
-
-
-
-
-
-
-}
+block::header::header(long long nonce, std::string prev_hash, std::string root_hash):
+m_nonce(nonce), m_previous_hash(prev_hash), m_timestamp(time(NULL)), m_root_hash(root_hash){}

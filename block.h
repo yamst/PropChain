@@ -17,28 +17,31 @@ class block{
 
         public:
 
-        header(long long nonce, std::string prev_hash, std::string root_hash, bool prealloc = true);
+        header(long long nonce, std::string prev_hash, std::string root_hash;
 
         private:
 
         long long m_nonce;
-        char* m_previous_hash;
+
+        std::string m_previous_hash;
+
         time_t m_timestamp;
+
         std::string m_root_hash;
 
     };
 
     class too_many_TX{};
-    // allocated_transactions should be an array of transactions allocated by new[]
+
+    // allocated_transactions, if prealloced, should be an array of transactions allocated by new[] 
     block(long long m_nonce, std::string prev_hash, transaction* transactions, int num_of_transactions, bool prealloc = true);
 
     ~block();
 
+    std::string computeHeaderHash();
+
     
     private:
-
-
-    
 
     int m_num_transactions;
 

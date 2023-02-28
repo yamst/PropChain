@@ -45,6 +45,9 @@ public:
   /// same as reset()
   SHA256();
 
+  /**********ADDED CONSTRUCTOR ***********/
+  SHA256(const void* data, size_t numBytes);
+
   /// compute SHA256 of a memory block
   std::string operator()(const void* data, size_t numBytes);
   /// compute SHA256 of a string, excluding final zero

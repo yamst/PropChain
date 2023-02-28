@@ -1,5 +1,5 @@
 
-// NOT OUR CODE. COPIED FROM SOURCE WITH OPEN USE LICENSE
+// NOT OUR CODE. COPIED FROM SOURCE WITH OPEN USE LICENSE. SLIGHTLY MODIFIED
 
 
 // //////////////////////////////////////////////////////////
@@ -23,6 +23,14 @@ SHA256::SHA256()
 {
   reset();
 }
+
+
+
+
+
+
+
+
 
 
 /// restart
@@ -429,4 +437,11 @@ std::string SHA256::operator()(const std::string& text)
   reset();
   add(text.c_str(), text.size());
   return getHash();
+}
+
+/********************* ADDED **********************/
+SHA256::SHA256(const void* data, size_t numBytes)
+{
+  reset();
+  add(data, numBytes);
 }
